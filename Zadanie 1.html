@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WESOLO</title>
+</head>
+<style>
+    @font-face {
+        font-family: Henny;
+        src: url(https://fonts.gstatic.com/s/hennypenny/v7/wXKvE3UZookzsxz_kjGSfPQtvXI.woff2);
+    }
+
+    * {
+        font-family: Henny;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    input {
+        width: 30px;
+        height: 20px;
+    }
+
+    .puste {
+        position: relative;
+    }
+
+    .divek {
+        height: 16px;
+
+    }
+
+    .imgi {
+        height: 16px;
+        width: 16px;
+        background: lightgrey;
+        border: black 1px solid;
+
+    }
+
+    .tekst {
+        font-size: 14px;
+        top: -3px;
+        left: 2.5px;
+        cursor: default;
+
+    }
+</style>
+
+<body>
+    <script>
+        var div = document.createElement("div")
+        var div1 = document.createElement("div") // div do 1 inputa
+        div.appendChild(div1)
+        div1.innerHTML = "Height: "
+        var div2 = document.createElement("div") // div do 2 inputa
+        div.appendChild(div2)
+        div2.innerHTML = "Width: "
+        var div3 = document.createElement("div") // div do 3 inputa
+        div.appendChild(div3)
+        div3.innerHTML = "Mines: "
+        var input = document.createElement("input")
+        div1.appendChild(input)
+        var input1 = document.createElement("input")
+        div2.appendChild(input1)
+        var input2 = document.createElement("input")
+        div3.appendChild(input2)
+        var button = document.createElement("button");
+        button.innerHTML = "Generuj"
+        div.appendChild(button);
+        var div2 = document.createElement("div");
+        div.appendChild(div2)
+        var div1 = document.createElement("div");
+        div.appendChild(div1)
+        var height = 0
+        input.onkeyup = function () {
+            height = input.value
+        }
+        var width = 0
+        input1.onkeyup = function () {
+            width = input1.value
+            dl = height * width
+        }
+        var miny = 0
+        var dorefresh = 0
+        input2.onkeyup = function () {
+            miny = input2.value
+            dorefresh = input2.value
+            if (input2.value > dl) {
+                if (alert("Nieprawidłowa liczba")) {} else {
+                    input2.value = ""
+                }
+            }
+        }
+
+        var czyszczenie = function () {
+            if (isNaN(input.value)) {
+                input.value = ""
+            }
+            if (isNaN(input1.value)) {
+                input1.value = ""
+            }
+            if (isNaN(input2.value)) {
+                input2.value = ""
+            }
+        }
+        input.onclick = function () {
+            if (typeof interval != "undefined") {
+                clearInterval(interval);
+            }
+            interval = window.setInterval(czyszczenie, 1000);
+        }
+        
+        var i = 0
+        var tab = []
+        var zera = []
+        var y = 0
+        var m = 0
+        var minyX = []
+        var minyY = []
+        var XD = 1
+        var koniec = 0
+        var tabkoniec1 = []
+        var tabkoniec2 = []
+        var tabkoniec3 = []
+        var tabelka = []
+        var tab4 = []
+        var tabelkax = []
+        var tabelkay = []
+        var koniec = 0
+        button.onclick = function () {
+            if (input.value == "" || input1.value == "" || input2.value == "") {
+                alert("Wpisz wszystkie dane")
+            } else {
+                sdsd = prompt("Please enter your name", "Harry Potter")
+                var sdsdlen = sdsd.length
+                div2.innerHTML = "<br/>" + "Pozostalo " + dorefresh + " bomb"
+                div1.innerHTML = "Czas:" + i + "[s]"
+                var f = function () {
+                    i = i + 1
+                    div1.innerHTML = "Czas:" + i + "[s]"
+                }
+                var f1 = function () {
+                    div2.innerHTML = "<br/>" + "Pozostalo " + dorefresh + " bomb"
+                }
+
+                if (typeof interval2 != "undefined") {
+                    clearInterval(interval2);
+                    
+                }
+                
+                if (typeof interval1 != "undefined") {
+                    clearInterval(interval1);
+                    i = 0
+                }
+                if (typeof interval3 != "undefined") {
+                    clearInterval(interval3);
+                    
+                }
+                if (typeof interval4 != "undefined") {
+                    clearInterval(interval4);          
+                }
+
+                interval1 = window.setInterval(f, 1000)
+                interval2 = window.setInterval(f1, 100)
+                if (typeof div5 != "undefined") {
+                    div5.remove()
+                    tab = []
+                    zera = []
+                    minyX = []
+                    minyY = []
+                    tabelka = []
+                    tabelkax = []
+                    tabelkay = []
+                    koniec = -1
+                    koniecko = 0
+                    docze = 0
+                    tabkoniec1 = []
+                    tabkoniec2 = []
+                    tabkoniec3 = [] 
+                }
+                var koniec = -1
+                var koniecko = 0
+                var docze = 0
+                div5 = document.createElement("div");
+                div5.className = "plansza"
+                div.appendChild(div5)
+                div5.style.position = "relative"
+                div5.style.left = (50 - width * 5 / 11) + "%"
+                tabkoniec1.push(width)
+                tabkoniec2.push(height)
+                tabkoniec3.push(miny)
+                tablicka1 = []
+                var cok = document.cookie 
+                console.log(cok)
+                cok = cok.split("; ")
+                console.log(cok)
+                cok3 = []
+                for (d = 0; d < cok.length; d++) {
+                        cok1 = cok[d]
+                                        
+                        cok2 = cok1.split("=")
+                        for (c = 0; c < cok2.length; c++) {
+                        cok3.push(cok2[c])
+                    }
+                       
+                                        
+                }
+                console.log(cok3)
+                cok4 = []
+                for (d = 0; d < cok3.length; d++) { 
+                    if (cok3[d] == tabkoniec1 + "x" + tabkoniec2 + "x" + tabkoniec3){
+                        console.log("jestgit")
+                        cok4.push(cok3[d+1])
+                        console.log(cok4)
+                    }
+                }
+                for (var a = 0; a < height; a++) {
+                    tab2 = []
+                    tab.push(tab2)
+                    tab3 = []
+                    zera.push(tab3)
+                    tab4 = []
+                    tabelka.push(tab4)
+                    for (var z = 0; z < width; z++) {
+                        tab2.push(0)
+                        tab3.push(0)
+                        tab4.push(0)
+                        
+                    }
+                }
+
+                for (var x = 0; x < miny; x++) {
+                    f = Math.random() * height
+                    f = Math.floor(f)
+                    g = Math.random() * width
+                    g = Math.floor(g)
+                    if (tab[f][g] == 1) {
+                        x--
+                    } else {
+                        tab[f][g] = 1
+                        zera[f][g] = 1
+                        minyY.push(f)
+                        minyX.push(g)
+                    }
+                }
+
+                for (var a = 0; a < height; a++) {
+                    zera[a].push(0)
+                    zera[a].unshift(0)
+                }
+                zera.unshift([])
+                zera.push([])
+                for (var a = 0; a < zera[1].length; a++) {
+                    zera[0].push(0)
+                    zera[zera.length - 1].push(0)
+                }
+
+                for (var a = 0; a < height; a++) {
+                    div4 = document.createElement("div");
+                    div4.className = "divek"
+                    div4.style.position = "absolute"
+                    div5.appendChild(div4)
+                    div4.value = a
+                    div4.style.width = height * 16 + "px"
+                    g = 0
+                    for (var z = 0; z < width; z++) {
+                        puste = document.createElement("img");
+                        divv = document.createElement("div")
+                        divv.className = "imgi"
+                        divv.style.position = "absolute"
+                        divv.style.left = g + "px"
+                        puste.style.position = "relative"
+                        puste.style.top = "-2px"
+                        puste.classList.add("puste")
+                        puste.classList.add("kupa")
+                        puste.src = "klepa.png"
+                        div4.appendChild(divv)
+                        divv.appendChild(puste)
+
+                        if (g % width == 0) {
+                            div4.style.top = a * 16 + "px"
+                        }
+                        puste.value = z
+                        g = g + 16
+                        puste.oncontextmenu = function () {
+                            if (this.classList.contains("kupa")) {
+                                console.log("zawiera")
+                                this.classList.add("kwadrat");
+                                this.classList.remove("kupa")
+                            }
+
+                            if (this.classList.contains("pyt")) {
+                                this.classList.add("kupa")
+                                this.classList.remove("pyt")
+                                this.src = "klepa.png"
+                                event.preventDefault();
+
+                            }
+                            if (this.classList.contains("flaga")) {
+                                this.classList.add("pyt");
+                                this.classList.remove("flaga")
+                                this.src = "pyt.png"
+                                dorefresh = dorefresh + 1
+                                event.preventDefault();
+
+                            }
+
+                            if (this.classList.contains("kwadrat")) {
+                                this.classList.add("flaga");
+                                this.classList.remove("kwadrat")
+                                this.src = "flaga.png"
+                                dorefresh = dorefresh - 1
+                                event.preventDefault();
+                            }
+                        }
+                    }
+                }
+                for (var a = 0; a < height; a++) {
+                    for (var z = 0; z < width; z++) {
+                            var x = z + 1
+                            var y = a + 1
+                            var dotekstu = 0
+                            console.log(zera[y][x + 1])
+                            if (zera[y][x + 1] == 1) {
+                                dotekstu = dotekstu + 1
+                            }
+                            if (zera[y][x - 1] == 1) {
+                                dotekstu = dotekstu + 1
+                            }
+                            if (zera[y + 1][x] == 1) {
+                                dotekstu = dotekstu + 1
+                            }
+                            if (zera[y - 1][x] == 1) {
+                                dotekstu = dotekstu + 1
+                            }
+                            if (zera[y - 1][x - 1] == 1) {
+                                 dotekstu = dotekstu + 1
+                            }
+                            if (zera[y + 1][x + 1] == 1) {
+                                dotekstu = dotekstu + 1
+                            }
+                            if (zera[y - 1][x + 1] == 1) {
+                                dotekstu = dotekstu + 1
+                            }
+                            if (zera[y + 1][x - 1] == 1) {
+                                dotekstu = dotekstu + 1
+                            }
+                            if(tab[a][z] == 1){
+                                tabelka[a][z] = "x"
+                            }
+                            else {
+                                tabelka[a][z] = dotekstu
+                            }
+                    }
+                }
+                
+                for (var a = 0; a < height; a++) {
+                    for (var z = 0; z < width; z++) {
+                        if (tab[a][z] == 1) {
+                            document.getElementsByClassName("divek")[a].getElementsByClassName("imgi")[z]
+                                .getElementsByClassName("puste")[0].onclick = function () {
+                                    for (var a = 0; a < height; a++) {
+                                        for (var z = 0; z < width; z++) {
+                                            if (tab[a][z] == 1) {
+                                                document.getElementsByClassName("divek")[a].getElementsByClassName(
+                                                        "imgi")[z].getElementsByClassName("puste")[0].src =
+                                                    "pbomb.png"
+                                            }
+                                        }
+                                    }
+                                    this.src = "bomb.png"
+                                    if (typeof interval3 != "undefined") {
+                                    clearInterval(interval3);
+                                
+                                    }
+                                    var f3 = function () {
+                                        i = i - 1
+                                    }
+                                    
+                                    interval3 = window.setInterval(f3, 1000);
+                                    setTimeout(function () {
+                                        alert("Uwaga bomba - ale łupło")
+                                        XD = 0
+
+                                    }, 200)
+                                    for (var a = 0; a < height; a++) {
+                                        for (var z = 0; z < width; z++) {
+                                            if(document.getElementsByClassName("divek")[a].getElementsByClassName(
+                                                "imgi")[z].children[0] != undefined) {
+                                            document.getElementsByClassName("divek")[a].getElementsByClassName(
+                                                "imgi")[z].children[0].onclick = null
+                                            document.getElementsByClassName("divek")[a].getElementsByClassName(
+                                                "imgi")[z].children[0].oncontextmenu = null
+                                            document.getElementsByClassName("divek")[a].getElementsByClassName(
+                                                "imgi")[z].children[0].oncontextmenu = function () {
+                                                event.preventDefault();
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                        } else {
+
+                            document.getElementsByClassName("divek")[a].getElementsByClassName("imgi")[z].children[
+                                0].onclick = function () {
+                                tekst = document.createElement("p")
+                                tekst.className = "tekst"
+                                dotekstu = 0
+
+                                tekst.style.position = "absolute"
+                                tekst.style['z-index'] = 1
+                                this.parentElement.appendChild(tekst)
+                                this.oncontextmenu = null
+                                this.parentElement.oncontextmenu = function () {
+                                    event.preventDefault();
+                                }
+                                
+                                var x = this.value + 1
+                                var y = this.parentElement.parentElement.value + 1
+                                if (zera[y][x + 1] == 1) {
+                                    dotekstu = dotekstu + 1
+                                }
+                                if (zera[y][x - 1] == 1) {
+                                    dotekstu = dotekstu + 1
+                                }
+                                if (zera[y + 1][x] == 1) {
+                                    dotekstu = dotekstu + 1
+                                }
+                                if (zera[y - 1][x] == 1) {
+                                    dotekstu = dotekstu + 1
+                                }
+                                if (zera[y - 1][x - 1] == 1) {
+                                    dotekstu = dotekstu + 1
+                                }
+                                if (zera[y + 1][x + 1] == 1) {
+                                    dotekstu = dotekstu + 1
+                                }
+                                if (zera[y - 1][x + 1] == 1) {
+                                    dotekstu = dotekstu + 1
+                                }
+                                if (zera[y + 1][x - 1] == 1) {
+                                    dotekstu = dotekstu + 1
+                                }
+                                
+                                a = x - 1
+                                b = y - 1
+                                var a1 = a  
+                                var b1 = b 
+                                
+                                dofunkcji = 0
+                                function superFunkcja(b, a) {
+                                b = parseInt(b)
+                                a  = parseInt(a)
+                                if( a < width - 1  && b < height - 1 && a >= 0 && b >= 0 && document.getElementsByClassName("divek")[b+1].getElementsByClassName("imgi")[a+1].children[0] != undefined ){
+                                        
+                                        if (tabelka[b + 1][a + 1] == 0 ) {
+                                        document.getElementsByClassName("divek")[b+1].getElementsByClassName("imgi")[a+1].children[0].remove() 
+                                        superFunkcja(b+1,a+1)
+                                        koniec = koniec + 1
+                                        }
+                                        else{
+                                            
+                                            document.getElementsByClassName("divek")[b + 1].getElementsByClassName("imgi")[a + 1].innerHTML = tabelka[b + 1][a + 1]
+                                            koniec = koniec + 1
+                                        }
+                                    }
+                                    if(a <= width - 1  && b <= height - 1 && a > 0 && b > 0 && document.getElementsByClassName("divek")[b-1].getElementsByClassName("imgi")[a-1].children[0] != undefined){
+                                        if (tabelka[b - 1][a - 1] == 0) {
+                                            document.getElementsByClassName("divek")[b-1].getElementsByClassName("imgi")[a-1].children[0].remove()
+                                            superFunkcja(b-1,a-1)
+                                            koniec = koniec + 1
+                                        }
+                                        else {
+                                            document.getElementsByClassName("divek")[b-1].getElementsByClassName("imgi")[a-1].innerHTML = tabelka[b-1][a-1]
+                                            koniec = koniec + 1
+                                        }
+                                    }
+                                    
+                                    if( a < width - 1  && b <= height - 1 && a >= 0 && b > 0 && document.getElementsByClassName("divek")[b-1].getElementsByClassName("imgi")[a+1].children[0] != undefined ){   
+                                        if (tabelka[b-1][a+1] == 0) {
+                                        document.getElementsByClassName("divek")[b-1].getElementsByClassName("imgi")[a+1].children[0].remove()
+                                        superFunkcja(b-1,a+1)
+                                        koniec = koniec + 1
+                                        }
+                                        else {
+                                            document.getElementsByClassName("divek")[b-1].getElementsByClassName("imgi")[a+1].innerHTML = tabelka[b-1][a+1]
+                                            koniec = koniec + 1
+                                            
+                                        }
+                                    }
+                                    if( a <= width - 1  && b < height - 1 && a > 0 && b >= 0 && document.getElementsByClassName("divek")[b+1].getElementsByClassName("imgi")[a-1].children[0] != undefined ){
+                                        if (tabelka[b+1][a-1] == 0) {
+                                        document.getElementsByClassName("divek")[b+1].getElementsByClassName("imgi")[a-1].children[0].remove()
+                                        superFunkcja(b+1,a-1)
+                                        koniec = koniec + 1
+                                        }
+                                        else {
+                                            document.getElementsByClassName("divek")[b+1].getElementsByClassName("imgi")[a-1].innerHTML = tabelka[b+1][a-1] 
+                                            koniec = koniec + 1
+                                        }
+                                    }
+                                    
+                                    if(a <= width - 1  && b < height - 1 && a >= 0 && b >= 0 && document.getElementsByClassName("divek")[b+1].getElementsByClassName("imgi")[a].children[0] != undefined ){
+                                        if (tabelka[b+1][a] == 0 )  {
+                                        document.getElementsByClassName("divek")[b+1].getElementsByClassName("imgi")[a].children[0].remove()
+                                        superFunkcja(b+1,a)
+                                        koniec = koniec + 1
+                                        }
+                                        else {
+                                            document.getElementsByClassName("divek")[b+1].getElementsByClassName("imgi")[a].innerHTML = tabelka[b+1][a] 
+                                            koniec = koniec + 1
+                                        }
+                                    }
+                                    
+                                    if( a < width - 1  && b <= height - 1 && a >= 0 && b >= 0 && document.getElementsByClassName("divek")[b].getElementsByClassName("imgi")[a+1].children[0] != undefined ){
+                                        if (tabelka[b][a+1] == 0 ) {
+                                        document.getElementsByClassName("divek")[b].getElementsByClassName("imgi")[a+1].children[0].remove()
+                                        superFunkcja(b,a+1)
+                                        koniec = koniec + 1
+                                        }
+                                        else {
+                                            document.getElementsByClassName("divek")[b].getElementsByClassName("imgi")[a+1].innerHTML = tabelka[b][a+1] 
+                                            koniec = koniec + 1
+                                        }
+                                    }
+                                    
+                                    if( a <= width - 1  && b <= height - 1 && a >= 0 && b > 0 && document.getElementsByClassName("divek")[b-1].getElementsByClassName("imgi")[a].children[0] != undefined ){
+                                        if (tabelka[b-1][a] == 0 ) {
+                                        document.getElementsByClassName("divek")[b-1].getElementsByClassName("imgi")[a].children[0].remove()
+                                        superFunkcja(b-1,a)
+                                        koniec = koniec + 1
+                                        }
+                                        else {
+                                            document.getElementsByClassName("divek")[b-1].getElementsByClassName("imgi")[a].innerHTML = tabelka[b-1][a] 
+                                            koniec = koniec + 1
+                                        }
+                                    }
+                                    
+                                    if( a <= width - 1  && b <= height - 1 && a > 0 && b >= 0 && document.getElementsByClassName("divek")[b].getElementsByClassName("imgi")[a-1].children[0] != undefined){
+                                        if (tabelka[b][a-1] == 0 ) {
+                                        document.getElementsByClassName("divek")[b].getElementsByClassName("imgi")[a-1].children[0].remove()
+                                        superFunkcja(b,a-1)
+                                        koniec = koniec + 1
+                                        }
+                                        else {
+                                            document.getElementsByClassName("divek")[b].getElementsByClassName("imgi")[a-1].innerHTML = tabelka[b][a-1] 
+                                            koniec = koniec + 1
+                                        }
+                                    }
+                                    
+                                }
+                                dospr = tabelka[b][a]
+                                
+                                if (dospr == 0){
+                                superFunkcja(b,a)
+                               
+                                
+                                }
+                                tekst.innerHTML = dotekstu
+                                this.remove()
+                                koniec = 0
+                                for (var a = 0; a < height; a++) {
+                                        for (var z = 0; z < width; z++) {
+                                        if (document.getElementsByClassName("divek")[a].getElementsByClassName("imgi")[z].getElementsByClassName("puste")[0] != undefined) {
+                                            koniec = koniec + 1
+
+                                        }
+                                    }
+                                }
+                                
+                                if (koniec == miny) {
+                                    for (var a = 0; a < height; a++) {
+                                        for (var z = 0; z < width; z++) {
+                                            if (tab[a][z] == 1) {
+                                                document.getElementsByClassName("divek")[a]
+                                                    .getElementsByClassName("imgi")[z].getElementsByClassName(
+                                                        "puste")[0].src = "pbomb.png"
+                                                document.getElementsByClassName("divek")[a]
+                                                    .getElementsByClassName("imgi")[z].children[0].onclick =
+                                                    null
+                                                document.getElementsByClassName("divek")[a]
+                                                    .getElementsByClassName("imgi")[z].children[0]
+                                                    .oncontextmenu = null
+                                                document.getElementsByClassName("divek")[a]
+                                                    .getElementsByClassName("imgi")[z].children[0]
+                                                    .oncontextmenu = function () {
+                                                        event.preventDefault();
+                                                    }
+                                            }
+                                        }
+                                    }
+                                    if (typeof interval4 != "undefined") {
+                                    clearInterval(interval4);
+                                
+                                    }
+                                    var f4 = function () {
+                                        i = i - 1
+                                    }
+                                    interval4 = window.setInterval(f4, 1000);
+                                    document.cookie = "zapisz=Czas:" + i + "Nickname:" + sdsd;
+                                    document.cookie = tabkoniec1 + "x" + tabkoniec2 + "x" + tabkoniec3 + "=Czas:" + i +"[sec]"+ "Nickname:" + sdsd;
+                                    var dd = document.cookie
+                                    var dd1 = dd.split("=")
+                                    for (d = -1; d < dd1.length; d=d+2) {
+                                        czasowoxd = dd1[d]
+                                    }
+                                    var x = document.cookie
+                                    
+                                    var heh = x.split("; ")
+                                    
+                                    
+                                    heh3 = []
+                                    for (d = 0; d < heh.length; d++) {
+                                        heh1 = heh[d]
+                                        
+                                        heh2 = heh1.split("=")
+                                        for (c = 0; c < heh2.length; c++) {
+                                            heh3.push(heh2[c])
+                                        }
+                                        
+                                        
+                                    }
+                                    cok4.push("cc" + "Czas:"+ "bb" + "_"+ i + "bb" + "_"+"[sec]" + "pppNickname:" + sdsd + "ggg" + "ppp" + "bb" + "--"+ "__" )
+                                    
+                                    cok5 = cok4.join("")
+                                   
+                                    dosort = cok5
+                                    
+                                    cok6 = cok5.split("__")
+                                   
+                                    cok6 = cok6.join("\n")
+                                    
+                                    czasowoxd = cok6
+                                    dosort = dosort.split("__")
+                                    
+                                    dosort.splice(dosort.length-1,1)
+                                    dosort3 = []
+                                    for (d = 0; d < dosort.length; d++) {
+                                        dosort1 = dosort[d]
+                                        
+                                        dosort2 = dosort1.split("_")
+                                        for (c = 0; c < dosort2.length; c++) {
+                                            dosort3.push(dosort2[c])
+                                        }
+                                        
+                                    }
+                                    faj12 = 0
+                                    
+                                    dosortlen = dosort3.length
+                                    for (dod = 1;dod < dosort3.length; dod=dod+2){
+                                        kozacko = dosort3.splice(dod + faj12,1)
+                                        kozacko = kozacko.join("")
+                                        dosort3.splice(dod-1 + faj12,0,kozacko)
+                                        
+                                        faj12 = faj12 + 1
+                                        
+
+                                    }
+                                    
+                                    dosort3 = dosort3.join("")
+                                    
+                                    dosort4 = dosort3.split("--")
+                                    dosort4.splice(dosort4.length-1,1)
+                                    
+                                    dosort5 = []
+                                    dosort6 = []
+                                    dosort7 = []
+                                    dosort4.sort()
+                                    for(dodac = 0;dodac < dosort4.length;dodac++) {
+                                        if (dosort4[dodac].length-sdsd.length < 29) {
+                                            dosort5.push(dosort4[dodac])
+                                        }
+                                        else {
+                                            dosort6.push(dosort4[dodac])
+                                        }
+                                       
+                                    }
+                                    dosort5.sort()
+                                    dosort6.sort()
+                                    dosort7 = dosort7.concat(dosort5,dosort6)
+                                    
+                                    dosort4 = dosort4.join("")
+                                    dosort4 = dosort4.split("bb")
+                                    
+                                    dosort4.splice(dosort4.length-1,1)
+                                   
+                                
+                                    for (dod = 0; dod<dosort4.length; dod= dod + 3) {
+                                        kozacko1 = dosort4.splice(dod ,1)
+                                        kozacko1 = kozacko1.join("")
+                                        dosort4.splice(dod + 1,0,kozacko1)
+                        
+                                       
+                                    }
+                                    dosort4 = dosort4.join("")
+                                    dosort4 = dosort4.split("cc")
+                                    dosort4 = dosort4.join("")
+                                    dosort4 = dosort4.split("ppp")
+                                    dosortA = []
+                                    dosortB = []
+                                    dosortC = []
+                                    dosortD = []
+                                    dosortE = []
+                                    console.log(dosort4)
+                                    for (a = 0; a < dosort4.length; a= a + 2) {
+                                        if (dosort4[a].length < 12) {
+                                            dosortA.push(dosort4[a])
+                                            dosortA.push(dosort4[a+1])
+                                        }
+                                        if (dosort4[a].length == 12) {
+                                            dosortB.push(dosort4[a])
+                                            dosortB.push(dosort4[a+1])
+                                        }
+                                        if (dosort4[a].length == 13) {
+                                            dosortD.push(dosort4[a])
+                                            dosortD.push(dosort4[a+1])
+                                        }
+                                        if (dosort4[a].length == 14) {
+                                            dosortE.push(dosort4[a])
+                                            dosortE.push(dosort4[a+1])
+                                        }
+                                    }
+                                    dosortA.splice(dosortA.length-2,2)
+                                    dosortB.splice(dosortB.length-2,2)
+                                    dosortD.splice(dosortD.length-2,2)
+                                    dosortE.splice(dosortE.length-2,2)
+                                    dosortC = dosortC.concat(dosortA,dosortB,dosortD,dosortE)
+                                    
+                                    dosortC = dosortC.join("")
+                                    dosortC = dosortC.split("ggg")
+                                    dosortC = dosortC.join("\n")
+                                    document.cookie = tabkoniec1 + "x" + tabkoniec2 + "x" + tabkoniec3 + "=" + cok5
+                                    for (d = 0; d < heh3.length; d++) {
+                                        
+                                        if (heh3[d] == tabkoniec1 + "x" + tabkoniec2 + "x" + tabkoniec3){
+                                        doczegos = heh3[d]
+                                            
+                                        
+                                        doczegos = doczegos.split("x")
+                                       
+                                        for(cd = 0 ;cd< 3; cd++) {
+                                            xd = doczegos[0]
+                                            xd1 = doczegos[1]
+                                            xd2 = doczegos[2]
+                                        }
+                                       
+                                        }
+                                    }
+                                    
+                                    setTimeout(function () {
+                                        alert("Wygrałeś!!!")
+                                    }, 200)
+                                    alert("Top najlepszych wyników: " + "\n" + "Width: " + xd + " Height: " +
+                                    xd1 +
+                                    " Miny: " + xd2 +  "\n" + 
+                                    dosortC)
+       
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+        document.body.appendChild(div);
+    </script>
+</body>
+
+</html>
