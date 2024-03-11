@@ -2,4 +2,4 @@
 
 To run clik:
 
-https://thyen-radek.github.io/Saper
+https://rkawa01.github.io/Saper
